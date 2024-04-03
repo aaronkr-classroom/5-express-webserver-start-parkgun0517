@@ -18,7 +18,7 @@ const port = 3000,
  */
 app.use(
     express.urlencoded({
-        extends: false
+        extended: false
     })
 ); // @TODO: express.urlencoded()를 이용해 URL-encoded 데이터를 파싱하도록 요청
 app.use(express.json()); // @TODO: express.json()을 이용해 JSON 데이터를 파싱하도록 요청
@@ -32,8 +32,8 @@ app.use(homeController.logRequestPaths); // @TODO: homeController에서 logReque
  * app.post(path, [callback])
  */
 app.get("/items/:item", homeController.sendReqParam); // @TODO: "/items/:item"로의 GET 요청 처리 (p. 153)
-app.get("/users/:userID", homeController.sendUserParam); // @TODO: "/users/:username"로의 GET 요청 처리 (추가)
-app.get("/courses/:courseID", homeController.sendCourseParam); // @TODO: "/courses/:courseId"로의 GET 요청 처리 (추가)
+app.get("/users/:userID", homeController.sendUserReqParam); // @TODO: "/users/:userID"로의 GET 요청 처리 (추가)
+app.get("/courses/:courseID", homeController.sendCourseReqParam); // @TODO: "/courses/:courseID"로의 GET 요청 처리 (추가)
 
 /**
  * 다른 라우트 수정
